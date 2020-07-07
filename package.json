@@ -1,0 +1,254 @@
+{
+  "name": "cli-e2e",
+  "version": "0.0.0",
+  "description": "CLI Integration test helper",
+  "main": "build/main/index.js",
+  "module": "build/module/index.js",
+  "engines": {
+    "node": ">=10.0.0",
+    "npm": ">=6.0.0"
+  },
+  "scripts": {
+    "lint": "eslint . && npm run lint:lockfile && npm run lint:md",
+    "lint:fix": "eslint . --fix",
+    "format": "prettier --config .prettierrc --write 'src/*.ts' cli.js",
+    "test": "jest",
+    "sec": "snyk test",
+    "test:watch": "jest --watch",
+    "coverage:view": "open-cli coverage/lcov-report/index.html",
+    "semantic-release": "semantic-release",
+    "lint:lockfile": "lockfile-lint --path package-lock.json --type npm --validate-https --allowed-hosts npm yarn",
+    "lint:md": "remark . .github",
+    "doc": "typedoc",
+    "build": "npm run build:main && npm run build:module",
+    "build:main": "tsc -p tsconfig.json",
+    "build:module": "tsc -p tsconfig.module.json",
+    "build:watch": "tsc --watch"
+  },
+  "author": {
+    "name": "Maximilian Berkmann",
+    "email": "maxieberkmann@gmail.com",
+    "url": "https://github.com/Berkmann18"
+  },
+  "license": "MIT",
+  "keywords": [
+    "cmd, e2e, integration, cli, helper, test"
+  ],
+  "homepage": "https://github.com/Berkmann18/cli-e2e",
+  "bugs": {
+    "url": "https://github.com/Berkmann18/cli-e2e/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Berkmann18/cli-e2e.git"
+  },
+  "dependencies": {
+    "concat-stream": "^2.0.0",
+    "cross-spawn": "^7.0.3"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^9.0.1",
+    "@commitlint/config-conventional": "^9.0.1",
+    "@semantic-release/changelog": "^5.0.1",
+    "@semantic-release/commit-analyzer": "^8.0.1",
+    "@semantic-release/git": "^9.0.0",
+    "@semantic-release/github": "^7.0.7",
+    "@semantic-release/npm": "^7.0.5",
+    "@semantic-release/release-notes-generator": "^9.0.1",
+    "@types/concat-stream": "^1.6.0",
+    "@types/cross-spawn": "^6.0.2",
+    "@types/jest": "^26.0.3",
+    "@types/node": "^14.0.14",
+    "@typescript-eslint/eslint-plugin": "^3.5.0",
+    "@typescript-eslint/parser": "^3.5.0",
+    "babel-eslint": "^10.0.1",
+    "babel-plugin-syntax-async-functions": "^6.13.0",
+    "babel-plugin-transform-regenerator": "^6.26.0",
+    "babel-preset-env": "^1.6.1",
+    "cz-conventional-changelog": "^3.2.0",
+    "eslint": "^7.4.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.18.0",
+    "eslint-plugin-jquery": "^1.5.1",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-security": "^1.4.0",
+    "eslint-plugin-standard": "^4.0.0",
+    "eslint-plugin-you-dont-need-lodash-underscore": "^6.10.0",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0",
+    "lint-staged": "^10.2.11",
+    "lockfile-lint": "^4.3.7",
+    "open-cli": "^6.0.1",
+    "prettier": "^2.0.5",
+    "remark-cli": "^8.0.0",
+    "remark-preset-lint-consistent": "^3.0.1",
+    "remark-preset-lint-recommended": "^4.0.1",
+    "semantic-release": "^17.1.1",
+    "snyk": "^1.360.0",
+    "ts-jest": "^26.1.1",
+    "typedoc": "^0.17.8",
+    "typescript": "^3.9.6"
+  },
+  "jest": {
+    "preset": "ts-jest",
+    "testEnvironment": "node",
+    "verbose": true,
+    "notify": true,
+    "collectCoverage": true,
+    "coverageThreshold": {
+      "global": {
+        "branches": 80,
+        "functions": 80,
+        "lines": 80,
+        "statements": 80
+      }
+    },
+    "testPathIgnorePatterns": [
+      "/__tests__/.*/__fixtures__/.*"
+    ],
+    "collectCoverageFrom": [
+      "src/**/*.{js,ts}",
+      "!src/typings/*.ts"
+    ],
+    "testMatch": [
+      "**/*.test.js"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "commit-msg": "commitlint --env HUSKY_GIT_PARAMS",
+      "pre-commit": "lint-staged",
+      "post-merge": "npm i",
+      "pre-push": "npm run lint && npm t"
+    }
+  },
+  "lint-staged": {
+    "(src/*.ts)|(*.js)": [
+      "npm run format"
+    ],
+    "*.md": [
+      "remark"
+    ]
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "standard": {
+    "env": [
+      "jest"
+    ],
+    "parser": "babel-eslint",
+    "ignore": [
+      "**/out/"
+    ]
+  },
+  "eslintIgnore": [
+    "coverage/**",
+    "*.min.js",
+    "dist",
+    "build",
+    "doc"
+  ],
+  "eslintConfig": {
+    "env": {
+      "node": true,
+      "es6": true,
+      "jest": true
+    },
+    "plugins": [
+      "import",
+      "standard",
+      "node",
+      "security",
+      "jest",
+      "jquery",
+      "@typescript-eslint"
+    ],
+    "extends": [
+      "eslint:recommended",
+      "plugin:security/recommended",
+      "plugin:node/recommended",
+      "plugin:you-dont-need-lodash-underscore/compatible",
+      "plugin:@typescript-eslint/recommended"
+    ],
+    "rules": {
+      "@typescript-eslint/indent": "off",
+      "@typescript-eslint/no-non-null-assertion": "warn",
+      "@typescript-eslint/no-var-requires": "off",
+      "indent": [
+        "error",
+        2
+      ],
+      "linebreak-style": [
+        "error"
+      ],
+      "no-console": "off",
+      "no-extra-semi": "off",
+      "no-process-exit": "warn",
+      "prefer-const": "warn",
+      "quotes": [
+        "error",
+        "single"
+      ],
+      "no-trailing-spaces": [
+        "error"
+      ],
+      "semi": "off",
+      "symbol-description": [
+        "warn"
+      ],
+      "jest/no-disabled-tests": "error",
+      "jest/no-focused-tests": "error",
+      "jest/no-identical-title": "error",
+      "node/no-unsupported-features": "off",
+      "node/no-unsupported-features/es-syntax": "off",
+      "node/no-unpublished-require": "off"
+    },
+    "parser": "@typescript-eslint/parser",
+    "parserOptions": {
+      "ecmaVersion": 9,
+      "ecmaFeatures": {
+        "impliedStrict": true
+      }
+    }
+  },
+  "release": {
+    "branch": "master",
+    "analyzeCommits": {
+      "preset": "angular"
+    }
+  },
+  "plugins": [
+    [
+      "@semantic-release/commit-analyzer",
+      {
+        "preset": "angular"
+      }
+    ],
+    "@semantic-release/release-notes-generator",
+    [
+      "@semantic-release/changelog",
+      {
+        "changelogFile": "CHANGELOG.md"
+      }
+    ],
+    "@semantic-release/npm",
+    [
+      "@semantic-release/git",
+      {
+        "assets": [
+          "CHANGELOG.md"
+        ]
+      }
+    ],
+    "@semantic-release/github"
+  ]
+}

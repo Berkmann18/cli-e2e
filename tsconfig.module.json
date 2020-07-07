@@ -1,0 +1,12 @@
+{
+  "extends": "./tsconfig",
+  "compilerOptions": {
+    "target": "esnext",
+    "outDir": "build/module",
+    "module": "esnext"
+  },
+  "removeComments": true,
+  "exclude": ["node_modules/**"],
+  "filesGlob": ["src/typings/*.ts"],
+  "compileOnSave": true
+}
