@@ -1,0 +1,241 @@
+<!doctype html>
+<html class="default no-js">
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>cli-e2e</title>
+	<meta name="description" content="Documentation for cli-e2e">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+<header>
+	<div class="tsd-page-toolbar">
+		<div class="container">
+			<div class="table-wrap">
+				<div class="table-cell" id="tsd-search" data-index="assets/js/search.json" data-base=".">
+					<div class="field">
+						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
+						<input id="tsd-search-field" type="text" />
+					</div>
+					<ul class="results">
+						<li class="state loading">Preparing search index...</li>
+						<li class="state failure">The search index is not available</li>
+					</ul>
+					<a href="index.html" class="title">cli-e2e</a>
+				</div>
+				<div class="table-cell" id="tsd-widgets">
+					<div id="tsd-filter">
+						<a href="#" class="tsd-widget options no-caption" data-toggle="options">Options</a>
+						<div class="tsd-filter-group">
+							<div class="tsd-select" id="tsd-filter-visibility">
+								<span class="tsd-select-label">All</span>
+								<ul class="tsd-select-list">
+									<li data-value="public">Public</li>
+									<li data-value="protected">Public/Protected</li>
+									<li data-value="private" class="selected">All</li>
+								</ul>
+							</div>
+							<input type="checkbox" id="tsd-filter-inherited" checked />
+							<label class="tsd-widget" for="tsd-filter-inherited">Inherited</label>
+							<input type="checkbox" id="tsd-filter-only-exported" />
+							<label class="tsd-widget" for="tsd-filter-only-exported">Only exported</label>
+						</div>
+					</div>
+					<a href="#" class="tsd-widget menu no-caption" data-toggle="menu">Menu</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="tsd-page-title">
+		<div class="container">
+			<ul class="tsd-breadcrumb">
+				<li>
+					<a href="globals.html">Globals</a>
+				</li>
+			</ul>
+			<h1>cli-e2e</h1>
+		</div>
+	</div>
+</header>
+<div class="container container-main">
+	<div class="row">
+		<div class="col-8 col-content">
+			<div class="tsd-panel tsd-typography">
+				<p align="center"><h1 align="center">
+						lh-avg
+					</h1>
+					<p align="center">
+						LightHouse Average calculator
+					</p>
+					<p><a href="https://nodei.co/npm/lh-avg/"><img src="https://nodei.co/npm/lh-avg.png" alt="NPM"></a></p>
+					<p><img src="https://github.com/Berkmann18/lh-avg/workflows/Node.js%20CI/badge.svg" alt="Node.js CI"></p>
+					<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+					<p><a href="#contributors-"><img src="https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square" alt="All Contributors"></a></p>
+					<!-- ALL-CONTRIBUTORS-BADGE:END -->
+					<p align="center">
+						<a href="https://www.npmjs.org/package/lh-avg"><img src="https://badgen.net/npm/license/lh-avg" alt="license"/></a>
+						<a href="https://www.npmjs.org/package/lh-avg"><img src="https://badgen.net/npm/dt/lh-avg" alt="downloads"/></a>
+						<a href="https://codecov.io/gh/berkmann18/lh-avg"><img src="https://badgen.net/codecov/c/github/berkmann18/lh-avg" alt="codecov"/></a>
+						<a href="https://snyk.io/test/github/berkmann18/lh-avg"><img src="https://snyk.io/test/github/berkmann18/lh-avg/badge.svg" alt="Known Vulnerabilities"/></a>
+						<a href="./SECURITY.md"><img src="https://img.shields.io/badge/Security-Responsible%20Disclosure-yellow.svg" alt="Responsible Disclosure Policy" /></a>
+						<a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-brightgreen.svg" alt="Commitizen friendly"></a>
+						<a href="https://github.com/Berkmann18/lh-avg"><img src="https://img.shields.io/github/languages/code-size/Berkmann18/lh-avg.svg" alt="GitHub code size in bytes"></a>
+						<a href="https://bettercodehub.com/results/Berkmann18/lh-avg"><img src="https://bettercodehub.com/edge/badge/Berkmann18/lh-avg?branch=master" alt="BCH compliance"></a>
+						<a href="https://app.codacy.com/app/maxieberkmann/lh-avg?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Berkmann18/lh-avg&amp;utm_campaign=Badge_Grade_Dashboard"><img src="https://api.codacy.com/project/badge/Grade/2a8e3e98d3bb47f29abbc3df7174675d" alt="Codacy Badge"></a>
+						<a href="https://github.com/semantic-release/semantic-release"><img src="https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg" alt="semantic-release"></a>
+					</p>
+					<a href="#install" id="install" style="color: inherit; text-decoration: none;">
+						<h1>Install</h1>
+					</a>
+					<pre><code class="language-bash">npm i --save lh-avg</code></pre>
+					<a href="#usage" id="usage" style="color: inherit; text-decoration: none;">
+						<h1>Usage</h1>
+					</a>
+					<a href="#cli" id="cli" style="color: inherit; text-decoration: none;">
+						<h2>CLI</h2>
+					</a>
+					<pre><code><span class="hljs-attribute">Usage</span>: cli [options] &lt;scoreStrings...&gt;
+
+<span class="livecodeserver">LightHouse <span class="hljs-built_in">average</span> calculator
+
+Options:
+  -V, <span class="hljs-comment">--version          output the version number</span>
+  -p, <span class="hljs-comment">--percentage       Return the result(s) in percentage form</span>
+  -f, <span class="hljs-comment">--format &lt;format&gt;  Return the result(s) in a specific format (json, csv, md, html), default: text</span>
+  -s, <span class="hljs-comment">--split            Split the string by metric</span>
+  -d, <span class="hljs-comment">--diff             Shows the difference between the first row and subsequent ones</span>
+  -n, <span class="hljs-comment">--names &lt;names&gt;    Add names to each results</span>
+  -c, <span class="hljs-comment">--config &lt;config&gt;  Use the configuration from the specified path</span>
+  -m, <span class="hljs-comment">--multi &lt;multi&gt;    Show multiple results (EXPERIMENTAL, please the config option for this)</span>
+  -h, <span class="hljs-comment">--help             display help for command</span></span></code></pre>
+					<a href="#configuration" id="configuration" style="color: inherit; text-decoration: none;">
+						<h3>Configuration</h3>
+					</a>
+					<p>The CLI will look for configuration files following the <code>cosmiconfig</code> approach:</p>
+					<ol>
+						<li><code>lh-avg</code> property in <code>package.json</code></li>
+						<li><code>.lh-avgrc</code> (using JSON or YAML syntax)</li>
+						<li><code>.lh-avgrc.json</code></li>
+						<li><code>.lh-avgrc.yaml</code>/<code>.lh-avgrc.yml</code>/<code>.lh-avgrc.js</code></li>
+						<li><code>lh-avg.config.js</code></li>
+					</ol>
+					<p>It will first read the configuration (if it finds one) <em>then</em> look at the CLI options (which overrides the relevant configuration options).</p>
+					<p><em>Note:</em> If it encounters a broken/invalid JSON configuration file, it will try to fix it and save the changes to the file itself. It won&#39;t be able to do the same for YAML files!</p>
+					<a href="#example" id="example" style="color: inherit; text-decoration: none;">
+						<h4>Example</h4>
+					</a>
+					<pre><code class="language-json">{
+  <span class="hljs-attr">&quot;format&quot;</span>: <span class="hljs-string">&quot;md&quot;</span>,
+  <span class="hljs-attr">&quot;split&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;percentage&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;inputs&quot;</span>: [
+    <span class="hljs-string">&quot;86/100/79/100/(1, 1, 6)&quot;</span>,
+    <span class="hljs-string">&quot;90/100/79/100/(1, 2, 6)&quot;</span>
+  ],
+  <span class="hljs-attr">&quot;diff&quot;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-attr">&quot;names&quot;</span>: [<span class="hljs-string">&quot;`master`&quot;</span>, <span class="hljs-string">&quot;`pr`&quot;</span>],
+  <span class="hljs-attr">&quot;multi&quot;</span>: {}
+}</code></pre>
+					<a href="#imports" id="imports" style="color: inherit; text-decoration: none;">
+						<h2>Imports</h2>
+					</a>
+					<pre><code class="language-js"><span class="hljs-keyword">import</span> average <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lh-avg&#x27;</span>;
+<span class="hljs-comment">// Or</span>
+<span class="hljs-keyword">const</span> average = <span class="hljs-built_in">require</span>(<span class="hljs-string">&#x27;lh-avg&#x27;</span>).default;</code></pre>
+					<a href="#example-1" id="example-1" style="color: inherit; text-decoration: none;">
+						<h1>Example</h1>
+					</a>
+					<pre><code class="language-ts"><span class="hljs-keyword">import</span> average <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;lh-avg&#x27;</span>;
+
+<span class="hljs-keyword">const</span> lightHouseScores = [<span class="hljs-string">&#x27;14 / 100 / 98 / 100 / (1, 0, 6)&#x27;</span>];
+
+<span class="hljs-built_in">console</span>.log(average(lightHouseScores));
+<span class="hljs-comment">/* {
+  perf: 0.14,
+  a11y: 1,
+  bp: 0.98,
+  seo: 1,
+  pwa: { fnr: 0.3333333333333333, ins: 0, po: 0.8571428571428571 },
+  average: 0.6157823129251702
+} */</span>
+
+<span class="hljs-built_in">console</span>.log(average(lightHouseScores, { asPercentage: <span class="hljs-literal">true</span> }));
+<span class="hljs-comment">/* {
+  perf: &#x27;14%&#x27;,
+  a11y: &#x27;100%&#x27;,
+  bp: &#x27;98%&#x27;,
+  seo: &#x27;100%&#x27;,
+  pwa: { fnr: &#x27;33.33%&#x27;, ins: &#x27;0%&#x27;, po: &#x27;85.71%&#x27; },
+  average: &#x27;61.58%&#x27;
+} */</span></code></pre>
+					<p>For more documentation, please check <a href="./doc/index.html"><code>./doc/index.html</code></a>.</p>
+					<a href="#contributing" id="contributing" style="color: inherit; text-decoration: none;">
+						<h1>Contributing</h1>
+					</a>
+					<p>Please consult <a href="./CONTRIBUTING.md">CONTRIBUTING</a> for guidelines on contributing to this project.</p>
+					<a href="#author" id="author" style="color: inherit; text-decoration: none;">
+						<h1>Author</h1>
+					</a>
+					<p><strong>lh-avg</strong> © <a href="https://github.com/berkmann18">Berkmann18</a>, Released under the <a href="./LICENSE">Apache-2.0</a> License.</p>
+					<a href="#contributors-✨" id="contributors-✨" style="color: inherit; text-decoration: none;">
+						<h2>Contributors ✨</h2>
+					</a>
+					<p>Thanks goes to these wonderful people (<a href="https://allcontributors.org/docs/en/emoji-key">emoji key</a>):</p>
+					<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+					<!-- prettier-ignore-start -->
+					<!-- markdownlint-disable -->
+					<table>
+						<tr>
+							<td align="center"><a href="http://maxcubing.wordpress.com"><img src="https://avatars0.githubusercontent.com/u/8260834?v=4" width="100px;" alt=""/><br /><sub><b>Maximilian Berkmann</b></sub></a><br /><a href="https://github.com/Berkmann18/lh-avg/commits?author=Berkmann18" title="Code">💻</a> <a href="https://github.com/Berkmann18/lh-avg/commits?author=Berkmann18" title="Documentation">📖</a> <a href="#example-Berkmann18" title="Examples">💡</a> <a href="#ideas-Berkmann18" title="Ideas, Planning, & Feedback">🤔</a> <a href="#infra-Berkmann18" title="Infrastructure (Hosting, Build-Tools, etc)">🚇</a> <a href="#maintenance-Berkmann18" title="Maintenance">🚧</a> <a href="#platform-Berkmann18" title="Packaging/porting to new platform">📦</a> <a href="https://github.com/Berkmann18/lh-avg/commits?author=Berkmann18" title="Tests">⚠️</a></td>
+						</tr>
+					</table>
+					<!-- markdownlint-enable -->
+					<!-- prettier-ignore-end -->
+					<!-- ALL-CONTRIBUTORS-LIST:END -->
+					<p>This project follows the <a href="https://github.com/all-contributors/all-contributors">all-contributors</a> specification. Contributions of any kind welcome!</p>
+			</div>
+		</div>
+		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
+			<nav class="tsd-navigation primary">
+				<ul>
+					<li class="globals  ">
+						<a href="globals.html"><em>Globals</em></a>
+					</li>
+					<li class=" tsd-kind-module">
+						<a href="modules/_cmd_.html">&quot;cmd&quot;</a>
+					</li>
+				</ul>
+			</nav>
+			<nav class="tsd-navigation secondary menu-sticky">
+				<ul class="before-current">
+				</ul>
+			</nav>
+		</div>
+	</div>
+</div>
+<footer class="with-border-bottom">
+	<div class="container">
+		<h2>Legend</h2>
+		<div class="tsd-legend-group">
+			<ul class="tsd-legend">
+				<li class="tsd-kind-variable"><span class="tsd-kind-icon">Variable</span></li>
+				<li class="tsd-kind-function"><span class="tsd-kind-icon">Function</span></li>
+				<li class="tsd-kind-type-alias"><span class="tsd-kind-icon">Type alias</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-interface"><span class="tsd-kind-icon">Interface</span></li>
+			</ul>
+			<ul class="tsd-legend">
+				<li class="tsd-kind-class tsd-has-type-parameter"><span class="tsd-kind-icon">Class with type parameter</span></li>
+			</ul>
+		</div>
+	</div>
+</footer>
+<div class="container tsd-generator">
+	<p>Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p>
+</div>
+<div class="overlay"></div>
+<script src="assets/js/main.js"></script>
+</body>
+</html>
