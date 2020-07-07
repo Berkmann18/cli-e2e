@@ -61,4 +61,4 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 
-**Special thanks to @zorrodg for making the original JS code**
+**Special thanks to @zorrodg for making the [original JS code](https://gist.github.com/zorrodg/c349cf54a3f6d0a9ba62e0f4066f31cb)!**
