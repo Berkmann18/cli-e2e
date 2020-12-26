@@ -24,7 +24,7 @@ interface ExecutionOptions {
 
 class ProcessPromise<T> extends Promise<T> {
   attachedProcess: ChildProcess|null;
-  constructor(executor: (resolve: (value: T | PromiseLike<T>) => void, reject: (reason?: any) => void) => void) {
+  constructor(executor: (resolve: (value: T | PromiseLike<T>) => void, reject: (reason?: never) => void) => void) {
     super(executor);
     this.attachedProcess = null;
   }

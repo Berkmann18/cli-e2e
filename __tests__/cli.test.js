@@ -1,4 +1,5 @@
 const path = require('path');
+//eslint-disable-next-line node/no-missing-require
 const cmd = require('../build/main/cmd');
 
 const cliPath = path.join(__dirname, './cli.js');
