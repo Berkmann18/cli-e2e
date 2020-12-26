@@ -24,12 +24,11 @@ interface ExecutionOptions {
 
 class ProcessPromise<T> extends Promise<T> {
   attachedProcess: ChildProcess|null;
-  constructor(executor: (resolve: (value?: T | PromiseLike<T>) => void, reject: (reason?: any) => void) => void) {
+  constructor(executor: (resolve: (value: T | PromiseLike<T>) => void, reject: (reason?: any) => void) => void) {
     super(executor);
     this.attachedProcess = null;
   }
 }
-
 
 const createProcess = (processPath: string, args: string[] = [], env: Environment = null): ChildProcess => {
   // Ensure that path exists
@@ -50,7 +49,7 @@ const createProcess = (processPath: string, args: string[] = [], env: Environmen
       },
       env
     ),
-    stdio: [null, null, null, 'ipc'] // This enables interprocess communication (IPC)
+    stdio: [null, null, null, 'ipc'] // This enables inter-process communication (IPC)
   });
 };
 
