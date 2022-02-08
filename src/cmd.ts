@@ -14,24 +14,29 @@ import { ChildProcess } from 'child_process';
 const PATH = process.env.PATH;
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-type Environment = null|{DEBUG?: boolean, [key:string]: any};
+type Environment = null | { DEBUG?: boolean; [key: string]: any };
 
 interface ExecutionOptions {
-  env?: Environment,
-  timeout?: number,
-  maxTimeout?: number
+  env?: Environment;
+  timeout?: number;
+  maxTimeout?: number;
 }
 
 class ProcessPromise<T> extends Promise<T> {
-  attachedProcess: ChildProcess|null;
-  constructor(executor: (resolve: (value?: T | PromiseLike<T>) => void, reject: (reason?: any) => void) => void) {
+  attachedProcess: ChildProcess | null;
+  constructor(
+    executor: (resolve: (value: T | PromiseLike<T>) => void, reject: (reason?: any) => void) => void
+  ) {
     super(executor);
     this.attachedProcess = null;
   }
 }
 
-
-const createProcess = (processPath: string, args: string[] = [], env: Environment = null): ChildProcess => {
+const createProcess = (
+  processPath: string,
+  args: string[] = [],
+  env: Environment = null
+): ChildProcess => {
   // Ensure that path exists
   if (!processPath || !existsSync(processPath)) {
     throw new Error('Invalid process path');
@@ -54,7 +59,12 @@ const createProcess = (processPath: string, args: string[] = [], env: Environmen
   });
 };
 
-const executeWithInput = (processPath: string, args: string[] = [], inputs: string[] = [], opts: ExecutionOptions = {}): ProcessPromise<string> => {
+const executeWithInput = (
+  processPath: string,
+  args: string[] = [],
+  inputs: string[] = [],
+  opts: ExecutionOptions = {}
+): ProcessPromise<string> => {
   if (!Array.isArray(inputs)) {
     opts = inputs;
     inputs = [];
@@ -63,9 +73,9 @@ const executeWithInput = (processPath: string, args: string[] = [], inputs: stri
   const { env = null, timeout = 100, maxTimeout = 10000 } = opts;
   const childProcess = createProcess(processPath, args, env);
   /* eslint-disable @typescript-eslint/no-non-null-assertion */
-  const stdin = (childProcess.stdin)!;
-  const stdout = (childProcess.stdout)!;
-  const stderr = (childProcess.stderr)!;
+  const stdin = childProcess.stdin!;
+  const stdout = childProcess.stdout!;
+  const stderr = childProcess.stderr!;
   /* eslint-enable @typescript-eslint/no-non-null-assertion */
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -153,7 +163,7 @@ const executeWithInput = (processPath: string, args: string[] = [], inputs: stri
   promise.attachedProcess = childProcess;
 
   return promise;
-}
+};
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 type CreateFunction = (...args: any) => ProcessPromise<string>;
@@ -163,20 +173,13 @@ const UP = '\x1B\x5B\x41';
 const ENTER = '\x0D';
 const SPACE = '\x20';
 
-const create = (processPath: string): {execute: CreateFunction} => {
+const create = (processPath: string): { execute: CreateFunction } => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const fn = (...args: any) => executeWithInput(processPath, ...args);
 
   return {
     execute: fn
   };
-}
-
-export {
-  createProcess,
-  create,
-  DOWN,
-  UP,
-  ENTER,
-  SPACE
 };
+
+export { createProcess, create, DOWN, UP, ENTER, SPACE };
