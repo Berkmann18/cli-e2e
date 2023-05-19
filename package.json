@@ -85,7 +85,7 @@
     "remark-preset-lint-consistent": "^3.0.1",
     "remark-preset-lint-recommended": "^4.0.1",
     "semantic-release": "^17.1.1",
-    "snyk": "^1.360.0",
+    "snyk": "^1.1159.0",
     "ts-jest": "^26.1.1",
     "typedoc": "^0.17.8",
     "typescript": "^3.9.6"
